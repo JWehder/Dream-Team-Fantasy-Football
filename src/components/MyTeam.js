@@ -8,7 +8,6 @@ function MyTeam({ myTeam, team, isLoggedIn }) {
     
   
     if (!isLoggedIn) return <Redirect to="/login" />
-    if ()
   
     return (
         <div>
