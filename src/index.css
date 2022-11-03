@@ -31,3 +31,13 @@ div.card button:hover {
   background-color: #6b5b95;
   opacity: 0.8;
 }
+
+img.teamLogo {
+  width: 5rem;
+  height: 5rem;
+}
+
+div.myTeamHeader {
+  display: flex;
+  margin: 15px;
+}

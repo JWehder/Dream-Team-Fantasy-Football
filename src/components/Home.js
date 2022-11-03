@@ -48,6 +48,7 @@ function Home({ players, header, isLoggedIn, onPlayerClick }) {
     if (!isLoggedIn) return <Redirect to="/login" />
     return (
         <div>
+            <div className="homepageHeader">
             <h1>Welcome, {header}</h1>
             <Filter onCategoryChange={handleCategoryChange}/>
             <form onSubmit={handleSearchFormSubmit}>
@@ -60,6 +61,7 @@ function Home({ players, header, isLoggedIn, onPlayerClick }) {
                 >
                 </input>
             </form>
+            </div>
             {playersToDisplay}
         </div>
     )   
