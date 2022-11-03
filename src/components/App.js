@@ -13,11 +13,10 @@ function App() {
   const [allPlayers, setAllPlayers] = useState([])
 
   useEffect(() => {
-    fetch('')
+      fetch('http://localhost:3000/players')
       .then(resp => resp.json())
       .then((players) => setAllPlayers(players))
-  
-    }, []); 
+  }, []); 
 
   const [team, setTeamData] = useState({
     cityName: "",
@@ -58,8 +57,8 @@ function App() {
           <Route exact path="/">
             <Home 
             isLoggedIn= {loggedIn} 
-            header={header} 
-            players= {allPlayers}
+            header={header}
+            players={allPlayers}
             />
           </Route>
         </Switch>
