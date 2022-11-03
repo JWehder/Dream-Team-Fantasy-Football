@@ -13,11 +13,11 @@ function App() {
   const [allPlayers, setAllPlayers] = useState([])
 
   useEffect(() => {
-  fetch('')
-    .then(resp => resp.json())
-    .then((players) => setAllPlayers(players))
-
-  }, []); 
+    fetch('')
+      .then(resp => resp.json())
+      .then((players) => setAllPlayers(players))
+  
+    }, []); 
 
   const [team, setTeamData] = useState({
     cityName: "",
