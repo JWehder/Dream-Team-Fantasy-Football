@@ -14,7 +14,7 @@ function MyTeam({ myTeam, team, isLoggedIn }) {
         <div>
             <div className="myTeamHeader">
                 {team.teamLogo === "" ? "" : <img className= "teamLogo" src= {team.teamLogo} alt= "team logo" />}
-                {team.teamName === "" ? "" : <h2>{team.cityName}, {team.teamName}</h2>}
+                {team.teamName === "" ? "Please Create A Team Before Adding Players" : <h2>{team.cityName}, {team.teamName}</h2>}
             </div>
             <PlayersTable positions= {positions} myTeam={myTeam} />
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom"
 import PlayerCard from "./PlayerCard";
 import Filter from "./Filter"
+import '../index.css'
 
 function Home({ players, header, isLoggedIn, onPlayerClick }) {
 
@@ -51,7 +52,7 @@ function Home({ players, header, isLoggedIn, onPlayerClick }) {
             <div className="homepageHeader">
             <h1>Welcome, {header}</h1>
             <Filter onCategoryChange={handleCategoryChange}/>
-            <form onSubmit={handleSearchFormSubmit}>
+            <form className= "searchForm" onSubmit={handleSearchFormSubmit}>
                 <input 
                 type="text" 
                 name="searchPlayer" 

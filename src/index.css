@@ -41,3 +41,12 @@ div.myTeamHeader {
   display: flex;
   margin: 15px;
 }
+
+div.homepageHeader {
+  display: inline-flex;
+  text-align: center;
+}
+
+form.searchForm {
+  float: left;
+}
