@@ -18,7 +18,23 @@ function App() {
       .then((players) => setAllPlayers(players))
   }, []); 
 
-  const [team, setTeamData] = useState({
+  function handlePlayerClick(player) {
+    setMyTeam({
+      ...myTeam,
+      [player.position]: {...player}
+    })
+  }
+
+  const [myTeam, setMyTeam] = useState({
+    QB: {},
+    RB: {},
+    WR: {},
+    TE: {},
+    K: {},
+    DEF: {},
+  })
+
+  const [teamData, setTeamData] = useState({
     cityName: "",
     teamName: "",
     teamLogo: ""
@@ -38,14 +54,15 @@ function App() {
           <Route path="/createteam">
             <CreateTeam 
             isLoggedIn={loggedIn} 
-            team={team}
+            team={teamData}
             setTeam={setTeamData}
             />
           </Route>
           <Route path="/myteam">
             <MyTeam 
             isLoggedIn= {loggedIn} 
-            team= {team}
+            team= {teamData}
+            myTeam= {myTeam}
             />
           </Route>
           <Route path="/login">
@@ -59,6 +76,7 @@ function App() {
             isLoggedIn= {loggedIn} 
             header={header}
             players={allPlayers}
+            onPlayerClick={handlePlayerClick}
             />
           </Route>
         </Switch>

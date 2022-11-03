@@ -3,12 +3,11 @@ import { Redirect } from "react-router-dom"
 import PlayerCard from "./PlayerCard";
 import Filter from "./Filter"
 
-function Home({ players, header, isLoggedIn }) {
+function Home({ players, header, isLoggedIn, onPlayerClick }) {
 
     const [positionCategory, setPositionCategory] = useState("All")
     const [searchedPlayer, setSearchedPlayer] = useState("")
 
-    
 
     function handleSearchChange(e) {
         setSearchedPlayer(e.target.value)
@@ -40,7 +39,7 @@ function Home({ players, header, isLoggedIn }) {
     })
 
     const playersToDisplay = searchPlayers.map((player) => {
-            return <PlayerCard handlePlayerClick= {handlePlayerClick} player={player} />
+            return <PlayerCard onPlayerClick= {onPlayerClick} player={player} />
         })
 
     if (!isLoggedIn) return <Redirect to="/login" />
