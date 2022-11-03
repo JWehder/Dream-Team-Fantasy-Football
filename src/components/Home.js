@@ -39,7 +39,10 @@ function Home({ players, header, isLoggedIn, onPlayerClick }) {
     })
 
     const playersToDisplay = searchPlayers.map((player) => {
-            return <PlayerCard onPlayerClick= {onPlayerClick} player={player} />
+            return <PlayerCard 
+            key= {player.name} 
+            onPlayerClick= {onPlayerClick} 
+            player={player} />
         })
 
     if (!isLoggedIn) return <Redirect to="/login" />

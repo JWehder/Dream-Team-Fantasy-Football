@@ -11,20 +11,6 @@ function App() {
   const [loggedIn, setIsLoggedIn] = useState(false);
   const [header, setHeader] = useState("")
   const [allPlayers, setAllPlayers] = useState([])
-
-  useEffect(() => {
-      fetch('http://localhost:3000/players')
-      .then(resp => resp.json())
-      .then((players) => setAllPlayers(players))
-  }, []); 
-
-  function handlePlayerClick(player) {
-    setMyTeam({
-      ...myTeam,
-      [player.position]: {...player}
-    })
-  }
-
   const [myTeam, setMyTeam] = useState({
     QB: {},
     RB: {},
@@ -39,6 +25,26 @@ function App() {
     teamName: "",
     teamLogo: ""
   })
+
+  useEffect(() => {
+      fetch('http://localhost:3000/players')
+      .then(resp => resp.json())
+      .then((players) => setAllPlayers(players))
+  }, []); 
+
+  function handlePlayerClick(playerName) {
+    fetch('http://localhost:3000/players') 
+      .then(resp => resp.json())
+      .then((players) => {
+        const pickedPlayer = players.filter((player) => player.name === playerName)
+        let playerObject = pickedPlayer[0]
+        setMyTeam({
+          ...myTeam,
+          [playerObject.position]: {...playerObject}
+        })
+      })
+  }
+
   function handleClick() {
     setIsLoggedIn(false)
   }

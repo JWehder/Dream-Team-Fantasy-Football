@@ -7,7 +7,7 @@ function PlayerCard({ player, onPlayerClick }) {
             <h2>{player.name}</h2>
             <p>{player.position} - {player.teamName}</p>
             <p>Projected {player.projectedPoints} Points vs {player.opponent}</p>
-            <button onClick={((player) => onPlayerClick(player))}>Add to Team</button>
+            <button onClick={(e) => onPlayerClick(e.nativeEvent.path[1].firstChild.textContent)}>Add to Team</button>
 
         </div>
     )

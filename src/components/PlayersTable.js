@@ -1,10 +1,10 @@
 import React from "react"
 import PlayerRow from "./PlayerRow";
 
-function PlayersTable({ team, positions }) {
+function PlayersTable({ myTeam, positions }) {
 
     const playersToDisplay = positions.map((position) => {
-        return <PlayerRow key= {position} position={position} team={team} />
+        return <PlayerRow key= {position} position={position} myTeam={myTeam} />
     })
   
     return (
