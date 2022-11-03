@@ -6,6 +6,9 @@ import Filter from "./Filter"
 function Home({ players, header, isLoggedIn }) {
 
     const [positionCategory, setPositionCategory] = useState("All")
+    const [searchedPlayer, setSearchedPlayer] = useState("")
+
+    function 
 
     function handleCategoryChange(event) {
         setPositionCategory(event.target.value)
@@ -28,6 +31,16 @@ function Home({ players, header, isLoggedIn }) {
         <div>
             <h1>Welcome, {header}</h1>
             <Filter onCategoryChange={handleCategoryChange}/>
+            <form>
+                <input 
+                type="text" 
+                name="searchPlayer" 
+                value={searchedPlayer}
+                placeholder="Search for a player.."
+                onChange={handleSearchChange}
+                >
+                </input>
+            </form>
             {playersToDisplay}
         </div>
     )   
