@@ -8,11 +8,14 @@ function Home({ players, header, isLoggedIn }) {
     const [positionCategory, setPositionCategory] = useState("All")
     const [searchedPlayer, setSearchedPlayer] = useState("")
 
+    
+
     function handleSearchChange(e) {
         setSearchedPlayer(e.target.value)
     }
 
     function handleSearchFormSubmit(e) {
+        e.preventDefault()
         setSearchedPlayer(e.target.value)
     }
 
@@ -37,7 +40,7 @@ function Home({ players, header, isLoggedIn }) {
     })
 
     const playersToDisplay = searchPlayers.map((player) => {
-            return <PlayerCard player={player} />
+            return <PlayerCard handlePlayerClick= {handlePlayerClick} player={player} />
         })
 
     if (!isLoggedIn) return <Redirect to="/login" />
