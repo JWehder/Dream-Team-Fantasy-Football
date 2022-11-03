@@ -8,7 +8,13 @@ function Home({ players, header, isLoggedIn }) {
     const [positionCategory, setPositionCategory] = useState("All")
     const [searchedPlayer, setSearchedPlayer] = useState("")
 
-    function 
+    function handleSearchChange(e) {
+        setSearchedPlayer(e.target.value)
+    }
+
+    function handleSearchFormSubmit(e) {
+        setSearchedPlayer(e.target.value)
+    }
 
     function handleCategoryChange(event) {
         setPositionCategory(event.target.value)
@@ -22,7 +28,15 @@ function Home({ players, header, isLoggedIn }) {
         }
     })
 
-    const playersToDisplay = filteredPlayers.map((player) => {
+    const searchPlayers = filteredPlayers.filter((player) => {
+        if (searchedPlayer === "") {
+            return true
+        } else {
+            return player.name === searchedPlayer
+        }
+    })
+
+    const playersToDisplay = searchPlayers.map((player) => {
             return <PlayerCard player={player} />
         })
 
@@ -31,7 +45,7 @@ function Home({ players, header, isLoggedIn }) {
         <div>
             <h1>Welcome, {header}</h1>
             <Filter onCategoryChange={handleCategoryChange}/>
-            <form>
+            <form onSubmit={handleSearchFormSubmit}>
                 <input 
                 type="text" 
                 name="searchPlayer" 
