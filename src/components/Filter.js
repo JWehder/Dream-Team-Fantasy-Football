@@ -5,7 +5,7 @@ function Filter({ onCategoryChange }) {
 
     return (
         <div>
-            <select name="filter" onChange={onCategoryChange}>
+            <select className= "filter" name="filter" onChange={onCategoryChange}>
                 <option value="All">Filter by position</option>
                 <option value="QB">QB</option>
                 <option value="RB">RB</option>

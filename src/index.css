@@ -43,10 +43,19 @@ div.myTeamHeader {
 }
 
 div.homepageHeader {
-  display: inline-flex;
+  margin-bottom: 30px
+}
+
+.homepageHeader.h1 {
   text-align: center;
 }
 
 form.searchForm {
   float: left;
+  display: flex;
+}
+
+div.filter {
+  float: left;
+  display: flex;
 }
