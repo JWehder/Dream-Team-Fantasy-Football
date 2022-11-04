@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,12 +14,16 @@ code {
 div.card {
   text-align: center;
   border: grey solid 1px;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 13rem;
-  height: 13rem;
+  height: 15rem;
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 3px 4px #6b5b95;
+}
+
+div.card p {
+  font-size: small;
 }
 
 div.card button {
@@ -46,7 +49,7 @@ div.homepageHeader {
   margin-bottom: 30px
 }
 
-.homepageHeader.h1 {
+.homepageHeader h1 {
   text-align: center;
 }
 
@@ -58,4 +61,13 @@ form.searchForm {
 div.filter {
   float: left;
   display: flex;
+  margin-bottom: 15px
+}
+
+div.playerContainer {
+  align-items: center;
+}
+
+.saveTeamButton {
+  float: right;
 }

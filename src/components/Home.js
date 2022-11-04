@@ -48,7 +48,7 @@ function Home({ players, header, isLoggedIn, onPlayerClick }) {
 
     if (!isLoggedIn) return <Redirect to="/login" />
     return (
-        <div>
+        <div className="playerContainer">
             <div className="homepageHeader">
             <h1>Welcome, {header}</h1>
             <Filter onCategoryChange={handleCategoryChange}/>
