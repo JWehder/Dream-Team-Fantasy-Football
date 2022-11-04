@@ -52,14 +52,7 @@ function App() {
         teamName: teamData.teamName,
         teamLogo: teamData.teamLogo
       },
-      myPlayers: [
-        QB: myTeam.QB,
-        myTeam.RB,
-        myTeam.WR,
-        myTeam.TE,
-       myTeam.K,
-        myTeam.DEF
-      ]
+      myPlayers: [myTeam.QB, myTeam.RB, myTeam.WR, myTeam.TE, myTeam.K, myTeam.DEF]
     }
     fetch('http://localhost:3000/teams', {
       method: 'POST',
