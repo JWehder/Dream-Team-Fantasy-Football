@@ -45,6 +45,10 @@ function App() {
       })
   }
 
+  function handleSaveTeam() {
+    
+  }
+
   function handleClick() {
     setIsLoggedIn(false)
   }
@@ -66,6 +70,7 @@ function App() {
           </Route>
           <Route path="/myteam">
             <MyTeam 
+            onSaveTeam={handleSaveTeam}
             isLoggedIn= {loggedIn} 
             team= {teamData}
             myTeam= {myTeam}
