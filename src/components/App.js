@@ -46,8 +46,10 @@ function App() {
   }
 
   function handleSaveTeam() {
+    const teamAndCity = `${teamData.cityName}, ${teamData.teamName}`
+
     const personalTeamData = {
-      myTeam: {
+      [teamAndCity]: {
         cityName: teamData.cityName,
         teamName: teamData.teamName,
         teamLogo: teamData.teamLogo
