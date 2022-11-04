@@ -46,7 +46,28 @@ function App() {
   }
 
   function handleSaveTeam() {
-    
+    const personalTeamData = {
+      myTeam: {
+        cityName: teamData.cityName,
+        teamName: teamData.teamName,
+        teamLogo: teamData.teamLogo
+      },
+      myPlayers: {
+        QB: myTeam.QB,
+        RB: myTeam.RB,
+        WR: myTeam.WR,
+        TE: myTeam.TE,
+        K: myTeam.K,
+        DEF: myTeam.DEF
+      }
+    }
+    fetch('http://localhost:3000/teams', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(personalTeamData),
+    })
   }
 
   function handleClick() {
