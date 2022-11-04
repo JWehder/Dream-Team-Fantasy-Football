@@ -40,12 +40,12 @@ img.teamLogo {
   height: 5rem;
 }
 
-div.myTeamHeader {
+div .myTeamHeader {
   display: flex;
   margin: 15px;
 }
 
-div.homepageHeader {
+div .homepageHeader {
   margin-bottom: 30px
 }
 
@@ -53,26 +53,27 @@ div.homepageHeader {
   text-align: center;
 }
 
-form.searchForm {
+form .searchForm {
   float: left;
   display: flex;
+  height: 20px;
 }
 
-div.filter {
+div .filter {
   float: left;
   display: flex;
-  margin-bottom: 15px
+  margin-bottom: 25px;
+  height: 20px;
 }
 
-div.playerContainer {
-  align-items: center;
+div .playerContainer {
+  text-align: center;
 }
 
 .saveTeamButton {
   float: right;
 }
 
-.navLink {
-  top: 50%;
-  
+.navBar {
+  text-align: center;
 }

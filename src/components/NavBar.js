@@ -4,13 +4,16 @@ import '../index.css'
 
 const linkStyle = {
     display: "inline-block",
-    width: "50px",
-    padding: "12px",
+    width: "70px",
+    padding: "10px",
     margin: "0 6px 6px",
-    background: "blue",
+    background: "white",
+    fontColor: "black",
+    border
     textDecoration: "none",
     color: "white",
-    align: "center",
+    textAlign: "center",
+    fontSize: "12px"
     
     
 }
