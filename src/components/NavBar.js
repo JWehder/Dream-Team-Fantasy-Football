@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import '../index.css'
 
 const linkStyle = {
     display: "inline-block",
@@ -17,11 +18,12 @@ const linkStyle = {
 function NavBar({ handleClick, isLoggedIn }) {
 
     return (
-        <div>
+        <div className="navBar">
             <NavLink
             to="/"
             exact
             style={linkStyle}
+            className="navLink"
             activeStyle={{
             background: "darkred",
             }}
@@ -32,6 +34,7 @@ function NavBar({ handleClick, isLoggedIn }) {
             to="/createteam"
             exact
             style={linkStyle}
+            className="navLink"
             activeStyle={{
             background: "darkred",
             }}
@@ -42,6 +45,7 @@ function NavBar({ handleClick, isLoggedIn }) {
             to="/myteam"
             exact
             style={linkStyle}
+            className="navLink"
             activeStyle={{
             background: "darkred",
             }}

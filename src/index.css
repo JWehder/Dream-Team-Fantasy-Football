@@ -71,3 +71,8 @@ div.playerContainer {
 .saveTeamButton {
   float: right;
 }
+
+.navLink {
+  top: 50%;
+  
+}
