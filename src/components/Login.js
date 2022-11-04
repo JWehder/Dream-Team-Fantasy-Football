@@ -24,7 +24,7 @@ function Login({ setHeader, setIsLoggedIn }) {
     }
 
     return (
-        <div>
+        <div className="Login">
             <h2>Please Login:</h2>
 
             <form onSubmit={handleSubmit}>

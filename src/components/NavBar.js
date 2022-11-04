@@ -9,12 +9,10 @@ const linkStyle = {
     margin: "0 6px 6px",
     background: "white",
     fontColor: "black",
-    border
     textDecoration: "none",
     color: "white",
     textAlign: "center",
     fontSize: "12px"
-    
     
 }
 

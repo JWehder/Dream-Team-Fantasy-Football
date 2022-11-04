@@ -77,3 +77,8 @@ div .playerContainer {
 .navBar {
   text-align: center;
 }
+
+.Login {
+  box-shadow: 3px 3px 3px black;
+  width: 250px;
+}
