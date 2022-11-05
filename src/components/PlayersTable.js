@@ -1,5 +1,6 @@
 import React from "react"
 import PlayerRow from "./PlayerRow";
+import "../index.css"
 
 function PlayersTable({ myTeam, positions }) {
 
@@ -9,7 +10,7 @@ function PlayersTable({ myTeam, positions }) {
   
     return (
         <div>
-            <table>
+            <table className="playersTable">
                 <thead>
                 <tr>
                     <th>Position</th>

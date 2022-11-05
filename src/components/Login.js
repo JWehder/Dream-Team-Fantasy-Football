@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 function Login({ setHeader, setIsLoggedIn }) {
+
     const history = useHistory()
 
     const [userData, setUserData] = useState({
@@ -45,8 +46,6 @@ function Login({ setHeader, setIsLoggedIn }) {
             <button type="submit">Login</button>
             </form>
         </div>
-
-
     )
 }
 

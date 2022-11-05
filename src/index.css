@@ -19,7 +19,7 @@ div.card {
   height: 15rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  box-shadow: 3px 4px #6b5b95;
+  box-shadow: 3px 4px blue;
 }
 
 div.card p {
@@ -31,7 +31,7 @@ div.card button {
 }
 
 div.card button:hover {
-  background-color: #6b5b95;
+  background-color: blue;
   opacity: 0.8;
 }
 
@@ -40,7 +40,7 @@ img.teamLogo {
   height: 5rem;
 }
 
-div .myTeamHeader {
+div.myTeamHeader {
   display: flex;
   margin: 15px;
 }
@@ -53,20 +53,20 @@ div .homepageHeader {
   text-align: center;
 }
 
-form .searchForm {
+form.searchForm {
   float: left;
   display: flex;
   height: 20px;
 }
 
-div .filter {
+div.filter {
   float: left;
   display: flex;
   margin-bottom: 25px;
   height: 20px;
 }
 
-div .playerContainer {
+div.playerContainer {
   text-align: center;
 }
 
@@ -79,6 +79,36 @@ div .playerContainer {
 }
 
 .Login {
-  box-shadow: 3px 3px 3px black;
-  width: 250px;
+  border: 2px solid black;
+  padding: 40px;
+  width: 200px;
+  height: 200px;
+  position:relative;
+}
+
+.navLink {
+  display: inline-block;
+  width: 90px;
+  padding: 10px;
+  margin: 0 6px 6px;
+  background: white;
+  border: 2px solid red;
+  text-decoration: none;
+  color: red;
+  text-align: center;
+  font-size: 14px;
+}
+
+.saveTeamButton {
+  margin-left: 100px
+}
+
+.playersTable {
+  table-layout: fixed;
+  border: 3px solid purple;
+  border-collapse:collapse;
+  width: 50%;
+  height: 350px;
+  text-align: center;
+  
 }

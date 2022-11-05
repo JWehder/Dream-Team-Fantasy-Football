@@ -106,6 +106,13 @@ function App() {
             onPlayerClick={handlePlayerClick}
             />
           </Route>
+          <Route path="/mycreatedteams">
+            <CreatedTeams
+            isLoggedIn={loggedIn} 
+            team={teamData}
+            setTeam={setTeamData}
+            />
+          </Route>
         </Switch>
 
       </div>
