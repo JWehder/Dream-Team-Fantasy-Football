@@ -11,7 +11,7 @@ function PlayersTable({ myTeam, positions }) {
     return (
         <div>
             <table className="playersTable">
-                <thead>
+                <thead className="tableHead">
                 <tr>
                     <th>Position</th>
                     <th>Name</th>
@@ -20,7 +20,7 @@ function PlayersTable({ myTeam, positions }) {
                     <th>Opponent</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody className="tableBody">
                 {playersToDisplay}
                 </tbody>
             </table>
