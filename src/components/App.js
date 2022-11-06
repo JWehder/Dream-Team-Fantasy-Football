@@ -4,7 +4,6 @@ import NavBar from "./NavBar";
 import Home from "./Home"
 import MyTeam from "./MyTeam"
 import Login from "./Login"
-import CreateTeam from "./CreateTeam";
 import Header from "./Header"
 import SavedTeams from "./SavedTeams"
 
