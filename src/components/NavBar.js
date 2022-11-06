@@ -11,27 +11,17 @@ function NavBar({ handleClick, isLoggedIn }) {
             exact
             className="navLink"
             activeStyle={{
-            background: "darkred",
+            background: "#878f99",
             }}
         >
             Home
-        </NavLink>
-        <NavLink
-            to="/createteam"
-            exact
-            className="navLink"
-            activeStyle={{
-            background: "darkred",
-            }}
-        >
-            Create Team
         </NavLink>
         <NavLink
             to="/myteam"
             exact
             className="navLink"
             activeStyle={{
-            background: "darkred",
+            background: "#878f99",
             }}
         >
             My Team
@@ -41,7 +31,7 @@ function NavBar({ handleClick, isLoggedIn }) {
             exact
             className="navLink"
             activeStyle={{
-            background: "darkred",
+            background: "#878f99",
             }}
         >
             Saved Teams
@@ -54,7 +44,7 @@ function NavBar({ handleClick, isLoggedIn }) {
             className="navLink"
             onClick={handleClick}
             activeStyle={{
-            background: "darkred",
+            background: "#878f99",
             }}
         >
             Logout

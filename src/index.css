@@ -91,10 +91,10 @@ div.playerContainer {
   width: 90px;
   padding: 10px;
   margin: 0 6px 6px;
-  background: white;
-  border: 2px solid #d64161;
+  background-color: #d5e1df;
+  border: 1px solid black;
   text-decoration: none;
-  color: #d64161;
+  color: black;
   text-align: center;
   font-size: 14px;
 }
@@ -119,4 +119,12 @@ div.playerContainer {
 
 .tableHead {
   background-color: #878f99;
+}
+
+.tableBody {
+  background-color: #d5e1df;
+}
+
+.webpageHeader {
+  text-align: center;
 }

@@ -79,13 +79,6 @@ function App() {
         handleClick={handleClick}
         />
         <Switch>
-          <Route path="/createteam">
-            <CreateTeam 
-            isLoggedIn={loggedIn} 
-            team={teamData}
-            setTeam={setTeamData}
-            />
-          </Route>
           <Route path="/myteam">
             <MyTeam 
             onSaveTeam={handleSaveTeam}
