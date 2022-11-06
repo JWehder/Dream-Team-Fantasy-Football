@@ -25,12 +25,13 @@ function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData }) {
                 </button>
 
             </div>
-            <PlayersTable positions= {positions} myTeam={myTeam} />
             <CreateTeam 
             isLoggedIn={isLoggedIn} 
             team={team}
             setTeam={setTeamData}
             />
+            <PlayersTable positions= {positions} myTeam={myTeam} />
+            
         </div>
         
     )

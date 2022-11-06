@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom"
+import "../index.css"
 
 function CreateTeam({ setTeam, team, isLoggedIn }) {
 
@@ -11,7 +11,6 @@ function CreateTeam({ setTeam, team, isLoggedIn }) {
           teamLogo: team.teamLogo
         }
         setTeam(teamData);
-        return <Redirect to="/myteam" />
     }
 
     function handleChange(e) {
@@ -22,7 +21,7 @@ function CreateTeam({ setTeam, team, isLoggedIn }) {
     }
 
     return (
-        <div>
+        <div className="teamForm">
             <form onSubmit={handleSubmit}>
                 <input 
                 type="text" 
