@@ -13,13 +13,13 @@ code {
 
 div.card {
   text-align: center;
-  border: grey solid 1px;
+  border: #6b5b95 solid 1px;
   padding: 0.5rem;
   width: 13rem;
   height: 15rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  box-shadow: 3px 4px #d64161
+  box-shadow: 3px 4px #6b5b95
 }
 
 div.card p {
@@ -27,11 +27,11 @@ div.card p {
 }
 
 div.card button {
-  background-color: #d64161;
+  background-color: #d5e1df;
 }
 
 div.card button:hover {
-  background-color: #d64161;
+  background-color: #6b5b95;
   opacity: 0.8;
 }
 
@@ -45,8 +45,9 @@ div.myTeamHeader {
   margin: 15px;
 }
 
-div .homepageHeader {
-  margin-bottom: 30px
+div.homepageHeader {
+  margin-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .homepageHeader h1 {
@@ -79,11 +80,9 @@ div.playerContainer {
 }
 
 .Login {
-  border: 2px solid black;
   padding: 40px;
-  width: 200px;
-  height: 200px;
   position:relative;
+  text-align: center;
 }
 
 .navLink {
@@ -127,6 +126,7 @@ div.playerContainer {
 
 .webpageHeader {
   text-align: center;
+  background-color: #6b5b95;
 }
 
 .savedTeams {
