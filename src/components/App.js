@@ -72,6 +72,11 @@ function App() {
     setIsLoggedIn(false)
   }
 
+  function handleEditClick() {
+    setEditMode(!editMode)
+  }
+
+
   return (
       <div>
         <Header />
@@ -88,13 +93,20 @@ function App() {
             myTeam= {myTeam}
             setTeamData= {setTeamData}
             editMode= {editMode}
-            onEditClick= {setEditMode(!editMode)}
+            onEditClick= {handleEditClick}
             />
           </Route>
           <Route path="/login">
             <Login 
             setIsLoggedIn= {setIsLoggedIn} 
             setHeader={setHeader}
+            />
+          </Route>
+          <Route path="/mysavedteams">
+            <SavedTeams
+            isLoggedIn={loggedIn} 
+            team={teamData}
+            setTeam={setTeamData}
             />
           </Route>
           <Route exact path="/">
@@ -105,13 +117,7 @@ function App() {
             onPlayerClick={handlePlayerClick}
             />
           </Route>
-          <Route path="/mysavedteams">
-            <SavedTeams
-            isLoggedIn={loggedIn} 
-            team={teamData}
-            setTeam={setTeamData}
-            />
-          </Route>
+          
         </Switch>
 
       </div>

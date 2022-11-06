@@ -23,7 +23,8 @@ function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData, editMode, o
                 value= "Submit"
                 >
                     Save Team
-                </button> :
+                </button> 
+                :
                 <button 
                 className= "saveTeamButton" 
                 onClick={onEditClick}
