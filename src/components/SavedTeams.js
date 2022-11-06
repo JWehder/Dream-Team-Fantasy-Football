@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Redirect } from "react-router-dom"
+import PlayersLiItem from "./PlayersLiItems"
 
 function SavedTeams({ isLoggedIn }) {
 
@@ -23,15 +24,23 @@ function SavedTeams({ isLoggedIn }) {
     }, []); 
 
     const savedTeamsToDisplay = savedTeams.map((savedTeam) => {
-        return 
+        return (
+            <div>
+                <h4>{savedTeam.teamName}</h4>
+            <ul>
+                <PlayersLiItem players={savedTeam.myPlayers} />
+            </ul>
+            </div>
+        )
     })
 
 
     if (!isLoggedIn) return <Redirect to="/login" />
     return (
-        <div>
-            <h1>creating functionality...</h1>
-            <ul>
+        <div className="savedTeams">
+            <h1>Saved Teams</h1>
+            <hr></hr>
+            <ul className="savedList">
                 {savedTeamsToDisplay}
             </ul>
         </div>

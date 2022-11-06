@@ -128,3 +128,12 @@ div.playerContainer {
 .webpageHeader {
   text-align: center;
 }
+
+.savedTeams {
+  text-align: center;
+}
+
+.playerListItem {
+  list-style: none;
+  text-align: center;
+}
