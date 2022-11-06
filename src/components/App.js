@@ -6,6 +6,8 @@ import MyTeam from "./MyTeam"
 import Login from "./Login"
 import CreateTeam from "./CreateTeam";
 import Header from "./Header"
+import SavedTeams from "./SavedTeams"
+
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false);
@@ -90,6 +92,7 @@ function App() {
             isLoggedIn= {loggedIn} 
             team= {teamData}
             myTeam= {myTeam}
+            setTeamData= {setTeamData}
             />
           </Route>
           <Route path="/login">
@@ -106,8 +109,8 @@ function App() {
             onPlayerClick={handlePlayerClick}
             />
           </Route>
-          <Route path="/mycreatedteams">
-            <CreatedTeams
+          <Route path="/mysavedteams">
+            <SavedTeams
             isLoggedIn={loggedIn} 
             team={teamData}
             setTeam={setTeamData}

@@ -36,6 +36,16 @@ function NavBar({ handleClick, isLoggedIn }) {
         >
             My Team
         </NavLink>
+        <NavLink
+            to="/mysavedteams"
+            exact
+            className="navLink"
+            activeStyle={{
+            background: "darkred",
+            }}
+        >
+            Saved Teams
+        </NavLink>
 
         {isLoggedIn ?
         <NavLink
@@ -51,17 +61,7 @@ function NavBar({ handleClick, isLoggedIn }) {
         </NavLink>
         : ""
         }
-        <NavLink
-            to="/mycreatedteams"
-            exact
-            className="navLink"
-            onClick={handleClick}
-            activeStyle={{
-            background: "darkred",
-            }}
-        >
-            Logout
-        </NavLink>
+        
         
         </div>
     )

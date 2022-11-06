@@ -21,8 +21,6 @@ function CreateTeam({ setTeam, team, isLoggedIn }) {
         })
     }
 
-    if (!isLoggedIn) return <Redirect to="/login" />
-
     return (
         <div>
             <form onSubmit={handleSubmit}>

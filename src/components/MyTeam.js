@@ -2,8 +2,9 @@ import React from "react";
 import { Redirect } from "react-router-dom"
 import PlayersTable from "./PlayersTable"
 import '../index.css'
+import CreateTeam from "./CreateTeam";
 
-function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn }) {
+function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData }) {
   
     const positions = Object.keys(myTeam)
     
@@ -25,6 +26,11 @@ function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn }) {
 
             </div>
             <PlayersTable positions= {positions} myTeam={myTeam} />
+            <CreateTeam 
+            isLoggedIn={isLoggedIn} 
+            team={team}
+            setTeam={setTeamData}
+            />
         </div>
         
     )
