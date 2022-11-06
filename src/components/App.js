@@ -27,6 +27,8 @@ function App() {
     teamLogo: ""
   })
 
+  const [editMode, setEditMode] = useState(true)
+
   useEffect(() => {
       fetch('http://localhost:3000/players')
       .then(resp => resp.json())
@@ -85,6 +87,8 @@ function App() {
             team= {teamData}
             myTeam= {myTeam}
             setTeamData= {setTeamData}
+            editMode= {editMode}
+            onEditClick= {setEditMode(!editMode)}
             />
           </Route>
           <Route path="/login">

@@ -23,7 +23,10 @@ function SavedTeams({ isLoggedIn }) {
     }, []); 
 
     const savedTeamsToDisplay = savedTeams.map((savedTeam) => {
-        return <li key= {savedTeam.id}>{savedTeam.teamName}</li>
+        return <li 
+        key= {savedTeam.id}
+        v
+        >{savedTeam.teamName}</li>
     })
 
 
