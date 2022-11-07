@@ -24,15 +24,6 @@ function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData, editMode, o
                 >
                     Save Team
                 </button> 
-                :
-                <button 
-                className= "saveTeamButton" 
-                onClick={onEditClick}
-                value= "Submit"
-                >
-                    Exit View Mode
-                </button>
-                }
 
             </div>
             <CreateTeam 
