@@ -25,3 +25,17 @@ Next, in order to get your backend running, you will need to fork and clone [thi
 npm install
 ```
 
+Once completed, navigate to your terminal again and start up a development server with the following:
+
+```sh
+npm run dev
+```
+
+You will notice that there are two different files pertaining to the database within the database directory. There are specific instructions with which you can use to copy data from the seed DB to the official DB within the README in the database directory.
+
+## Usage
+
+Add players to your team.
+
+
+

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function Login({ setHeader, setIsLoggedIn }) {
 
@@ -26,26 +28,37 @@ function Login({ setHeader, setIsLoggedIn }) {
 
     return (
         <div className="Login">
-            <h2>Please Login:</h2>
-
-            <form onSubmit={handleSubmit}>
-            <input 
-            type="text" 
-            value={userData.username}
-            name="username" 
-            placeholder="username"
-            onChange={handleChange}
-            />
-            <input 
-            type="password" 
-            value={userData.password}
-            name="password"
-            placeholder="password"
-            onChange={handleChange}
-            />
-            <button type="submit">Login</button>
-            </form>
+        <h2 style={{textAlign:"center"}}>Please Login:</h2>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-2">
+                <Form.Label>Username</Form.Label>
+                <Form.Control 
+                value= {userData.username} 
+                type="text" 
+                placeholder="Enter Username" 
+                name="username"
+                onChange={handleChange}
+                required
+                />
+              </Form.Group>
+        
+              <Form.Group className="mb-2">
+                <Form.Label>Password</Form.Label>
+                <Form.Control 
+                type="password" 
+                placeholder="Password" 
+                value={userData.password}
+                name="password"
+                onChange={handleChange}
+                required
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
         </div>
+          
     )
 }
 

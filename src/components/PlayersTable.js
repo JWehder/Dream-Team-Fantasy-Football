@@ -1,6 +1,7 @@
 import React from "react"
 import PlayerRow from "./PlayerRow";
 import "../index.css"
+import Table from 'react-bootstrap/Table';
 
 function PlayersTable({ myTeam, positions }) {
 
@@ -9,22 +10,20 @@ function PlayersTable({ myTeam, positions }) {
     })
   
     return (
-        <div>
-            <table className="playersTable">
-                <thead className="tableHead">
-                <tr>
-                    <th>Position</th>
-                    <th>Name</th>
-                    <th>Team</th>
-                    <th>Projected Points</th>
-                    <th>Opponent</th>
-                </tr>
-                </thead>
-                <tbody className="tableBody">
+        <Table striped bordered hover className="playersTable">
+            <thead>
+            <tr>
+                <th>Position</th>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Projected Points</th>
+                <th>Opponent</th>
+            </tr>
+            </thead>
+            <tbody>
                 {playersToDisplay}
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </Table>
     );
 }
 

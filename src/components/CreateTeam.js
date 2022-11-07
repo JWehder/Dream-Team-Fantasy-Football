@@ -29,6 +29,7 @@ function CreateTeam({ setTeam, team, isLoggedIn }) {
                 name="cityName"
                 placeholder="City Name"
                 onChange={handleChange}
+                required
                 />
                 <input
                 type="text"
@@ -36,6 +37,7 @@ function CreateTeam({ setTeam, team, isLoggedIn }) {
                 name="teamName"
                 placeholder="Team Name"
                 onChange={handleChange}
+                required
                 />
                 <input
                 type="text"
@@ -43,6 +45,7 @@ function CreateTeam({ setTeam, team, isLoggedIn }) {
                 name="teamLogo"
                 placeholder="Insert Image URL here"
                 onChange={handleChange}
+                required
                 />
                 <input
                 type="submit"
