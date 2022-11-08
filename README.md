@@ -19,23 +19,14 @@ npm start
 
 ## Backend Installation
 
-Next, in order to get your backend running, you will need to fork and clone [this repository](https://github.com/JWehder/json-server-template) from GitHub. Again, open it up in an IDE of your choice and run the following to install all dependencies:
-
-```sh
-npm install
-```
-
-Once completed, navigate to your terminal again and start up a development server with the following:
-
-```sh
-npm run dev
-```
-
-You will notice that there are two different files pertaining to the database within the database directory. There are specific instructions with which you can use to copy data from the seed DB to the official DB within the README in the database directory.
+Next, in order to get your backend running, you will need to fork and clone [this repository](https://github.com/JWehder/json-server-template) from GitHub. Once there, open up the `README.md` within the directory to follow the instructions on how to start up the backend.
 
 ## Usage
 
-Add players to your team.
+In order to get an understanding of how to work the application, I provided a Youtube video with all that you will need to know.
 
+## Contributing and Support 
+
+For any major changes or questions, please
 
 

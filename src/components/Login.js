@@ -36,7 +36,7 @@ function Login({ setHeader, setIsLoggedIn }) {
                 <Form.Control 
                 value= {userData.username} 
                 type="text" 
-                placeholder="Enter Username" 
+                placeholder="Username" 
                 name="username"
                 onChange={handleChange}
                 required
