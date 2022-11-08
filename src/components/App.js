@@ -10,6 +10,7 @@ import SavedTeams from "./SavedTeams"
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false);
+  const [savedTeams, setSavedTeams] = useState([])
   const [header, setHeader] = useState("")
   const [allPlayers, setAllPlayers] = useState([])
   const [myTeam, setMyTeam] = useState({
@@ -66,6 +67,32 @@ function App() {
       },
       body: JSON.stringify(personalTeamData),
     })
+      .then(res => res.json())
+      .then((teams) => teams.map((teamObj) => {
+        const teamKeys = Object.keys(teamObj)
+        let teamName = teamKeys[0]
+        setSavedTeams([
+            ...savedTeams,
+            {
+                id: teamObj.id,
+                myPlayers: teamObj["myPlayers"],
+                teamName: teamName
+            }
+        ])
+        setMyTeam({
+          QB: {},
+          RB: {},
+          WR: {},
+          TE: {},
+          K: {},
+          DEF: {},
+        })
+        setTeamData({
+          cityName: "",
+          teamName: "",
+          teamLogo: ""
+        })
+    }))
   }
 
   function handleClick() {
@@ -107,6 +134,7 @@ function App() {
             isLoggedIn={loggedIn} 
             team={teamData}
             setTeam={setTeamData}
+            savedTeams={savedTeams}
             />
           </Route>
           <Route exact path="/">

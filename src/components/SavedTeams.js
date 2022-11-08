@@ -2,26 +2,8 @@ import React, {useState, useEffect} from "react";
 import { Redirect } from "react-router-dom"
 import PlayersLiItem from "./PlayersLiItems"
 
-function SavedTeams({ isLoggedIn }) {
+function SavedTeams({ isLoggedIn, savedTeams }) {
 
-    const [savedTeams, setSavedTeams] = useState([])
-
-    useEffect(() => {
-        fetch('http://localhost:3000/teams')
-        .then(resp => resp.json())
-        .then((teams) => teams.map((teamObj) => {
-            const teamKeys = Object.keys(teamObj)
-            let teamName = teamKeys[0]
-            setSavedTeams([
-                ...savedTeams,
-                {
-                    id: teamObj.id,
-                    myPlayers: teamObj["myPlayers"],
-                    teamName: teamName
-                }
-            ])
-        }))
-    }, []); 
 
     const savedTeamsToDisplay = savedTeams.map((savedTeam) => {
         return (
