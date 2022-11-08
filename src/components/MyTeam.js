@@ -4,7 +4,7 @@ import PlayersTable from "./PlayersTable"
 import '../index.css'
 import CreateTeam from "./CreateTeam";
 
-function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData, editMode, onEditClick }) {
+function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData }) {
   
     const positions = Object.keys(myTeam)
     
@@ -16,20 +16,13 @@ function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData, editMode, o
             <div className="myTeamHeader">
                 {team.teamLogo === "" ? "" : <img className= "teamLogo" src= {team.teamLogo} alt= "team logo" />}
                 {team.teamName === "" ? "Please Create A Team Before Adding Players" : <h2>{team.cityName}, {team.teamName}</h2>}
-                { editMode ?
-                <button 
-                className= "saveTeamButton" 
-                onClick={onSaveTeam}
-                value= "Submit"
-                >
-                    Save Team
-                </button> 
 
             </div>
             <CreateTeam 
             isLoggedIn={isLoggedIn} 
             team={team}
             setTeam={setTeamData}
+            onSaveTeam={onSaveTeam}
             />
             <PlayersTable positions= {positions} myTeam={myTeam} />
             

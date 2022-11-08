@@ -59,6 +59,7 @@ form.searchForm {
   float: left;
   display: flex;
   height: 20px;
+  margin-left: 100px;
 }
 
 div.filter {

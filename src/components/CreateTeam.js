@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css"
 
-function CreateTeam({ setTeam, team, isLoggedIn }) {
+function CreateTeam({ setTeam, team, onSaveTeam }) {
 
     function handleSubmit(e) {
         e.preventDefault() 
@@ -50,6 +50,7 @@ function CreateTeam({ setTeam, team, isLoggedIn }) {
                 <input
                 type="submit"
                 value="Create Team"
+                onClick={onSaveTeam}
                 />
             </form>
             
