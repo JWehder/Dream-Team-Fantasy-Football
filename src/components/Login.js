@@ -28,7 +28,8 @@ function Login({ setHeader, setIsLoggedIn }) {
 
     return (
         <div className="Login">
-        <h2 style={{textAlign:"center"}}>Please Login:</h2>
+        <h2 style={{textAlign:"center", paddingBottom: "30px"}}>Please Login:</h2>
+            <div className="loginForm">
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-2">
                 <Form.Label>Username</Form.Label>
@@ -39,6 +40,7 @@ function Login({ setHeader, setIsLoggedIn }) {
                 name="username"
                 onChange={handleChange}
                 required
+                className="loginInputs"
                 />
               </Form.Group>
         
@@ -51,12 +53,14 @@ function Login({ setHeader, setIsLoggedIn }) {
                 name="password"
                 onChange={handleChange}
                 required
+                className="loginInputs"
                 />
               </Form.Group>
               <Button variant="primary" type="submit">
                 Submit
               </Button>
             </Form>
+            </div>
         </div>
           
     )

@@ -79,6 +79,7 @@ div.playerContainer {
 
 .navBar {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .Login {
@@ -86,9 +87,19 @@ div.playerContainer {
   position:relative;
 }
 
+.Login input {
+  width: 350px;
+}
+
+.loginForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navLink {
   display: inline-block;
-  width: 90px;
+  width: 100px;
   padding: 10px;
   margin: 0 6px 6px;
   background-color: #d5e1df;
