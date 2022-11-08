@@ -23,10 +23,10 @@ Next, in order to get your backend running, you will need to fork and clone [thi
 
 ## Usage
 
-In order to get an understanding of how to work the application, I provided a Youtube video with all that you will need to know.
+In order to get an understanding of how to work my application, I created a [Youtube video](https://youtu.be/IvmaLl-peU0) with all the information that you will need to know.
 
 ## Contributing and Support 
 
-For any major changes or questions, please
+For any major changes or questions, please contact me via email at jake.wehder@gmail.com.
 
 
