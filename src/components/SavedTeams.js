@@ -4,6 +4,8 @@ import PlayersLiItem from "./PlayersLiItems"
 
 function SavedTeams({ isLoggedIn, savedTeams }) {
 
+    useEffect() => () 
+
 
     const savedTeamsToDisplay = savedTeams.map((savedTeam) => {
         return (

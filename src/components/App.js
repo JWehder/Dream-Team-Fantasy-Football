@@ -68,7 +68,7 @@ function App() {
       body: JSON.stringify(personalTeamData),
     })
       .then(res => res.json())
-      .then((teams) => teams.map((teamObj) => {
+      .then((team) => addTeam(team)
         const teamKeys = Object.keys(teamObj)
         let teamName = teamKeys[0]
         setSavedTeams([
@@ -94,6 +94,8 @@ function App() {
         })
     }))
   }
+
+  function addTeam()
 
   function handleClick() {
     setIsLoggedIn(false)
