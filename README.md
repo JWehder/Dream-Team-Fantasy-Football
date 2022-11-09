@@ -29,4 +29,8 @@ In order to get an understanding of how to work my application, I created a [You
 
 For any major changes or questions, please contact me via email at jake.wehder@gmail.com.
 
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
 
