@@ -148,3 +148,7 @@ div.playerContainer {
   list-style: none;
   text-align: center;
 }
+
+#total {
+  text-align: right;
+}
