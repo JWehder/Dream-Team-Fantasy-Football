@@ -34,6 +34,12 @@ function App() {
       .then((players) => setAllPlayers(players))
   }, []); 
 
+  useEffect(() => {
+    fetch('http://localhost:3000/teams')
+    .then(resp => resp.json())
+    .then((teams) => setSavedTeams(teams))
+}, []); 
+
   function handlePlayerClick(playerName) {
     fetch('http://localhost:3000/players') 
       .then(resp => resp.json())
