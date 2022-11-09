@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { Redirect } from "react-router-dom"
 import PlayersLiItem from "./PlayersLiItems"
 
 function SavedTeams({ isLoggedIn, savedTeams }) {
-
-    useEffect() => () 
 
 
     const savedTeamsToDisplay = savedTeams.map((savedTeam) => {

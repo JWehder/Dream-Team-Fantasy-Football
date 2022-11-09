@@ -28,8 +28,6 @@ function App() {
     teamLogo: ""
   })
 
-  const [editMode, setEditMode] = useState(true)
-
   useEffect(() => {
       fetch('http://localhost:3000/players')
       .then(resp => resp.json())
@@ -60,6 +58,7 @@ function App() {
       },
       myPlayers: [myTeam.QB, myTeam.RB, myTeam.WR, myTeam.TE, myTeam.K, myTeam.DEF]
     }
+
     fetch('http://localhost:3000/teams', {
       method: 'POST',
       headers: {
@@ -68,41 +67,38 @@ function App() {
       body: JSON.stringify(personalTeamData),
     })
       .then(res => res.json())
-      .then((team) => addTeam(team)
-        const teamKeys = Object.keys(teamObj)
-        let teamName = teamKeys[0]
-        setSavedTeams([
-            ...savedTeams,
-            {
-                id: teamObj.id,
-                myPlayers: teamObj["myPlayers"],
-                teamName: teamName
-            }
-        ])
-        setMyTeam({
+      .then((team) => addTeam(team))
+      
+    setMyTeam({
           QB: {},
           RB: {},
           WR: {},
           TE: {},
           K: {},
           DEF: {},
-        })
-        setTeamData({
+    })
+    setTeamData({
           cityName: "",
           teamName: "",
           teamLogo: ""
-        })
-    }))
+    })
   }
 
-  function addTeam()
+  function addTeam(teamObj) {
+      const teamKeys = Object.keys(teamObj)
+      let teamName = teamKeys[0]
+      setSavedTeams([
+          ...savedTeams,
+          {
+              id: teamObj.id,
+              myPlayers: teamObj["myPlayers"],
+              teamName: teamName
+          }
+      ])
+  }
 
   function handleClick() {
     setIsLoggedIn(false)
-  }
-
-  function handleEditClick() {
-    setEditMode(!editMode)
   }
 
 
@@ -121,8 +117,6 @@ function App() {
             team= {teamData}
             myTeam= {myTeam}
             setTeamData= {setTeamData}
-            editMode= {editMode}
-            onEditClick= {handleEditClick}
             />
           </Route>
           <Route path="/login">
