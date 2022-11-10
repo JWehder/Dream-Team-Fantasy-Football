@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home"
@@ -28,7 +28,7 @@ function App() {
     teamLogo: ""
   })
 
-  const MyTeamContext = createContext();
+  const MyTeamContext = React.createContext();
 
   useEffect(() => {
       fetch('http://localhost:3000/players')

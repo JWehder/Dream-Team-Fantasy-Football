@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import MyTeamContext from "./App"
 
 
 function PlayerRow({ position }) {
 
-    const playerData = useContext(MyTeamContext);
+    import { MyTeamContext } from "./App";
 
     return (
             <tr>
