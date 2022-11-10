@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home"
@@ -27,6 +27,8 @@ function App() {
     teamName: "",
     teamLogo: ""
   })
+
+  const MyTeamContext = createContext();
 
   useEffect(() => {
       fetch('http://localhost:3000/players')
@@ -117,6 +119,7 @@ function App() {
         />
         <Switch>
           <Route path="/myteam">
+          <MyTeamContext.Provider value={myTeam}>
             <MyTeam 
             onSaveTeam={handleSaveTeam}
             isLoggedIn= {loggedIn} 
@@ -124,6 +127,7 @@ function App() {
             myTeam= {myTeam}
             setTeamData= {setTeamData}
             />
+          </MyTeamContext.Provider>
           </Route>
           <Route path="/login">
             <Login 
@@ -134,7 +138,6 @@ function App() {
           <Route path="/mysavedteams">
             <SavedTeams
             isLoggedIn={loggedIn} 
-            team={teamData}
             setTeam={setTeamData}
             savedTeams={savedTeams}
             />

@@ -24,7 +24,7 @@ function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData }) {
             setTeam={setTeamData}
             onSaveTeam={onSaveTeam}
             />
-            <PlayersTable positions= {positions} myTeam={myTeam} />
+            <PlayersTable positions= {positions} />
             
         </div>
         

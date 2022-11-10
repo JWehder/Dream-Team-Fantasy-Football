@@ -3,10 +3,10 @@ import PlayerRow from "./PlayerRow";
 import "../index.css"
 import Table from 'react-bootstrap/Table';
 
-function PlayersTable({ myTeam, positions }) {
+function PlayersTable({ positions }) {
 
     const playersToDisplay = positions.map((position) => {
-        return <PlayerRow key= {position} position={position} myTeam={myTeam} />
+        return <PlayerRow key= {position} position={position} />
     })
   
     return (
