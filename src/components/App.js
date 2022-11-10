@@ -6,6 +6,7 @@ import MyTeam from "./MyTeam"
 import Login from "./Login"
 import Header from "./Header"
 import SavedTeams from "./SavedTeams"
+import { TeamProvider } from "../context/myTeam";
 
 
 function App() {
@@ -13,22 +14,13 @@ function App() {
   const [savedTeams, setSavedTeams] = useState([])
   const [header, setHeader] = useState("")
   const [allPlayers, setAllPlayers] = useState([])
-  const [myTeam, setMyTeam] = useState({
-    QB: {},
-    RB: {},
-    WR: {},
-    TE: {},
-    K: {},
-    DEF: {},
-  })
+
 
   const [teamData, setTeamData] = useState({
     cityName: "",
     teamName: "",
     teamLogo: ""
   })
-
-  const MyTeamContext = React.createContext();
 
   useEffect(() => {
       fetch('http://localhost:3000/players')
@@ -42,18 +34,7 @@ function App() {
     .then((teams) => setSavedTeams(teams))
 }, []); 
 
-  function handlePlayerClick(playerName) {
-    fetch('http://localhost:3000/players') 
-      .then(resp => resp.json())
-      .then((players) => {
-        const pickedPlayer = players.filter((player) => player.name === playerName)
-        let playerObject = pickedPlayer[0]
-        setMyTeam({
-          ...myTeam,
-          [playerObject.position]: {...playerObject}
-        })
-      })
-  }
+
 
   function handleSaveTeam() {
     const teamAndCity = `${teamData.cityName}, ${teamData.teamName}`
@@ -119,15 +100,14 @@ function App() {
         />
         <Switch>
           <Route path="/myteam">
-          <MyTeamContext.Provider value={myTeam}>
+          <TeamProvider value={myTeam}>
             <MyTeam 
             onSaveTeam={handleSaveTeam}
             isLoggedIn= {loggedIn} 
             team= {teamData}
-            myTeam= {myTeam}
             setTeamData= {setTeamData}
             />
-          </MyTeamContext.Provider>
+          </TeamProvider>
           </Route>
           <Route path="/login">
             <Login 

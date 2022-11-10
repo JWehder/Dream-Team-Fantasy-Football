@@ -1,18 +1,17 @@
 import React, { useContext } from "react";
-import MyTeamContext from "./App"
+import { TeamContext } from "../context/myTeam";
 
 
 function PlayerRow({ position }) {
-
-    import { MyTeamContext } from "./App";
+    const myTeam = useContext(TeamContext)
 
     return (
             <tr>
                 <td>{position}</td>
-                <td>{myTeam[position].name ? playerData[position].name : "" }</td>
-                <td>{playerData[position].teamName ? playerData[position].teamName : ""}</td>
-                <td>{playerData[position].projectedPoints ? playerData[position].projectedPoints : ""}</td>
-                <td>{playerData[position].opponent ? playerData[position].opponent : ""}</td>
+                <td>{myTeam[position].name ? myTeam[position].name : "" }</td>
+                <td>{myTeam[position].teamName ? myTeam[position].teamName : ""}</td>
+                <td>{myTeam[position].projectedPoints ? myTeam[position].projectedPoints : ""}</td>
+                <td>{myTeam[position].opponent ? myTeam[position].opponent : ""}</td>
             </tr>
     )
 }
