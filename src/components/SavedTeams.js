@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Redirect } from "react-router-dom"
 import PlayersLiItem from "./PlayersLiItems"
+import { TeamContext } from "../context/myTeam";
 
-function SavedTeams({ isLoggedIn, savedTeams }) {
+function SavedTeams({ isLoggedIn }) {
+
+    const { savedTeams } = useContext(TeamContext)
 
 
     const savedTeamsToDisplay = savedTeams.map((savedTeam) => {

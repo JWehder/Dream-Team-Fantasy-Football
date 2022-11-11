@@ -4,7 +4,7 @@ import "../index.css"
 
 function CreateTeam() {
 
-    const { handleSaveTeam, teamData, setTeamData } = useContext(TeamContext)
+    const { handleSaveTeam, teamData, setTeamData } = useContext(TeamContext);
 
     function handleSubmit(e) {
         e.preventDefault() 

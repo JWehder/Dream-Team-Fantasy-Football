@@ -12,6 +12,7 @@ function Home({ header, isLoggedIn }) {
 
     const { allPlayers } = useContext(PlayerContext);
 
+    // handlers
 
     function handleSearchChange(e) {
         setSearchedPlayer(e.target.value)
@@ -25,6 +26,8 @@ function Home({ header, isLoggedIn }) {
     function handleCategoryChange(event) {
         setPositionCategory(event.target.value)
     }
+
+    // iterators
 
     const filteredPlayers = allPlayers.filter((player) => {
         if (positionCategory === "All") {

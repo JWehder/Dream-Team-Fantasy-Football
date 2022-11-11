@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Redirect } from "react-router-dom"
 import PlayersTable from "./PlayersTable"
 import '../index.css'
 import CreateTeam from "./CreateTeam";
-import 
+import { TeamContext } from "../context/myTeam";
 
 function MyTeam({ isLoggedIn }) {
 
-
+    const { myTeam, teamData } = useContext(TeamContext);
   
     const positions = Object.keys(myTeam)
     
@@ -16,8 +16,8 @@ function MyTeam({ isLoggedIn }) {
     return (
         <div>
             <div className="myTeamHeader">
-                {team.teamLogo === "" ? "" : <img className= "teamLogo" src= {team.teamLogo} alt= "team logo" />}
-                {team.teamName === "" ? "Please Create A Team Before Adding Players" : <h2>{team.cityName}, {team.teamName}</h2>}
+                {teamData.teamLogo === "" ? "" : <img className= "teamLogo" src= {teamData.teamLogo} alt= "team logo" />}
+                {teamData.teamName === "" ? "Please Create A Team Before Adding Players" : <h2>{teamData.cityName}, {teamData.teamName}</h2>}
 
             </div>
             <CreateTeam />

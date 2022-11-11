@@ -3,7 +3,7 @@ import { TeamContext } from "../context/myTeam";
 
 
 function PlayerRow({ position }) {
-    const myTeam = useContext(TeamContext)
+    const { myTeam } = useContext(TeamContext)
 
     return (
             <tr>

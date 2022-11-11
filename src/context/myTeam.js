@@ -87,7 +87,7 @@ function TeamProvider({ children }) {
         })
     }
 
-    return <TeamContext.Provider value={{ myTeam, handlePlayerClick, handleSaveTeam, teamData, setTeamData }}>{children}</TeamContext.Provider>;
+    return <TeamContext.Provider value={{ myTeam, handlePlayerClick, handleSaveTeam, teamData, setTeamData, savedTeams }}>{children}</TeamContext.Provider>;
 }
 
 export { TeamProvider, TeamContext }
