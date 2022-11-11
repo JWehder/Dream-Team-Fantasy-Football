@@ -10,7 +10,7 @@ function Home({ header, isLoggedIn }) {
     const [positionCategory, setPositionCategory] = useState("All")
     const [searchedPlayer, setSearchedPlayer] = useState("")
 
-    const { allPlayers } = useContext(PlayerContext)
+    const { allPlayers } = useContext(PlayerContext);
 
 
     function handleSearchChange(e) {

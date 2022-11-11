@@ -3,8 +3,11 @@ import { Redirect } from "react-router-dom"
 import PlayersTable from "./PlayersTable"
 import '../index.css'
 import CreateTeam from "./CreateTeam";
+import 
 
-function MyTeam({ myTeam, team, isLoggedIn }) {
+function MyTeam({ isLoggedIn }) {
+
+
   
     const positions = Object.keys(myTeam)
     

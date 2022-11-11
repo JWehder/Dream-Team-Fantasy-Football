@@ -29,16 +29,10 @@ function App() {
         />
         <Switch>
           <Route path="/myteam">
-          <TeamProvider>
             <MyTeam isLoggedIn= {loggedIn} />
-          </TeamProvider>
           </Route>
           <Route path="/mysavedteams">
-            <TeamProvider>
-            <SavedTeams
-            isLoggedIn={loggedIn} 
-            />
-            </TeamProvider>
+            <SavedTeams isLoggedIn={loggedIn} />
           </Route>
           <Route path="/login">
             <Login 
@@ -51,12 +45,10 @@ function App() {
             isLoggedIn= {loggedIn} 
             header={header}
             />
- 
           </Route>
         </Switch>
         </TeamProvider>
         </PlayerProvider>
-
       </div>
   );
 }

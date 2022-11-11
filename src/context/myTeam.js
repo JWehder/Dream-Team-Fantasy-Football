@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
-const TeamContext = React.createContext();
+const TeamContext = createContext();
 
 function TeamProvider({ children }) {
     const [myTeam, setMyTeam] = useState({

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 
-const PlayerContext = createContext
+const PlayerContext = createContext()
 
 function PlayerProvider({ children }) {
 
