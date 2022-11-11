@@ -17,7 +17,7 @@ function TeamProvider({ children }) {
         teamName: "",
         teamLogo: ""
     })
-    
+
     useEffect(() => {
         fetch('http://localhost:3000/teams')
         .then(resp => resp.json())
@@ -36,7 +36,6 @@ function TeamProvider({ children }) {
             }
         ])
     }
-
 
     function handleSaveTeam() {
         const teamAndCity = `${teamData.cityName}, ${teamData.teamName}`

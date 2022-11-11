@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home"
@@ -7,27 +7,21 @@ import Login from "./Login"
 import Header from "./Header"
 import SavedTeams from "./SavedTeams"
 import { TeamProvider } from "../context/myTeam";
+import { PlayerProvider } from "../context/players";
 
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false);
   const [header, setHeader] = useState("")
-  const [allPlayers, setAllPlayers] = useState([])
-
-
-  useEffect(() => {
-      fetch('http://localhost:3000/players')
-      .then(resp => resp.json())
-      .then((players) => setAllPlayers(players))
-  }, []); 
-
+  
   function handleClick() {
     setIsLoggedIn(false)
   }
 
-
   return (
       <div>
+        <PlayerProvider>
+        <TeamProvider>
         <Header />
         <NavBar 
         isLoggedIn={loggedIn}
@@ -42,7 +36,8 @@ function App() {
           <Route path="/mysavedteams">
             <TeamProvider>
             <SavedTeams
-            isLoggedIn={loggedIn} />
+            isLoggedIn={loggedIn} 
+            />
             </TeamProvider>
           </Route>
           <Route path="/login">
@@ -55,12 +50,12 @@ function App() {
             <Home 
             isLoggedIn= {loggedIn} 
             header={header}
-            players={allPlayers}
-            onPlayerClick={handlePlayerClick}
             />
+ 
           </Route>
-          
         </Switch>
+        </TeamProvider>
+        </PlayerProvider>
 
       </div>
   );

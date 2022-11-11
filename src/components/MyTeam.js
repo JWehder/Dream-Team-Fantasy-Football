@@ -8,7 +8,6 @@ function MyTeam({ myTeam, team, isLoggedIn }) {
   
     const positions = Object.keys(myTeam)
     
-  
     if (!isLoggedIn) return <Redirect to="/login" />
   
     return (

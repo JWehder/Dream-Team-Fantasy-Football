@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom"
 import PlayerCard from "./PlayerCard";
 import Filter from "./Filter"
 import '../index.css'
+import { PlayerContext } from "../context/players";
 
-function Home({ players, header, isLoggedIn, onPlayerClick }) {
 
+function Home({ header, isLoggedIn }) {
     const [positionCategory, setPositionCategory] = useState("All")
     const [searchedPlayer, setSearchedPlayer] = useState("")
+
+    const { allPlayers } = useContext(PlayerContext)
 
 
     function handleSearchChange(e) {
@@ -23,7 +26,7 @@ function Home({ players, header, isLoggedIn, onPlayerClick }) {
         setPositionCategory(event.target.value)
     }
 
-    const filteredPlayers = players.filter((player) => {
+    const filteredPlayers = allPlayers.filter((player) => {
         if (positionCategory === "All") {
             return true
         } else {
@@ -42,9 +45,8 @@ function Home({ players, header, isLoggedIn, onPlayerClick }) {
     const playersToDisplay = searchPlayers.map((player) => {
             return <PlayerCard 
             key= {player.name} 
-            onPlayerClick= {onPlayerClick} 
             player={player} />
-        })
+    })
 
     if (!isLoggedIn) return <Redirect to="/login" />
     return (
