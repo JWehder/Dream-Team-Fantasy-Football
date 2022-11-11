@@ -11,8 +11,71 @@ function TeamProvider({ children }) {
         K: {},
         DEF: {},
       })
+    const [savedTeams, setSavedTeams] = useState([])
+    const [teamData, setTeamData] = useState({
+        cityName: "",
+        teamName: "",
+        teamLogo: ""
+    })
+    
+    useEffect(() => {
+        fetch('http://localhost:3000/teams')
+        .then(resp => resp.json())
+        .then((teams) => setSavedTeams(teams))
+    }, []); 
 
-      function handlePlayerClick(playerName) {
+    function addTeam(teamObj) {
+        const teamKeys = Object.keys(teamObj)
+        let teamName = teamKeys[0]
+        setSavedTeams([
+            ...savedTeams,
+            {
+                id: teamObj.id,
+                myPlayers: teamObj["myPlayers"],
+                teamName: teamName
+            }
+        ])
+    }
+
+
+    function handleSaveTeam() {
+        const teamAndCity = `${teamData.cityName}, ${teamData.teamName}`
+    
+        const personalTeamData = {
+          [teamAndCity]: {
+            cityName: teamData.cityName,
+            teamName: teamData.teamName,
+            teamLogo: teamData.teamLogo
+          },
+          myPlayers: [myTeam.QB, myTeam.RB, myTeam.WR, myTeam.TE, myTeam.K, myTeam.DEF]
+        }
+        fetch('http://localhost:3000/teams', {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(personalTeamData),
+          })
+            .then(res => res.json())
+            .then((team) => addTeam(team))
+            
+          setMyTeam({
+                QB: {},
+                RB: {},
+                WR: {},
+                TE: {},
+                K: {},
+                DEF: {},
+          })
+          setTeamData({
+                cityName: "",
+                teamName: "",
+                teamLogo: ""
+          })
+    }
+      
+
+    function handlePlayerClick(playerName) {
         fetch('http://localhost:3000/players') 
           .then(resp => resp.json())
           .then((players) => {
@@ -23,9 +86,9 @@ function TeamProvider({ children }) {
               [playerObject.position]: {...playerObject}
             })
         })
-      }
+    }
 
-    return <TeamContext.Provider value={{ myTeam, handlePlayerClick }}>{children}</TeamContext.Provider>;
+    return <TeamContext.Provider value={{ myTeam, handlePlayerClick, handleSaveTeam, teamData, setTeamData }}>{children}</TeamContext.Provider>;
 }
 
 export { TeamProvider, TeamContext }

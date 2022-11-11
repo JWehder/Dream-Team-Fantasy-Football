@@ -4,7 +4,7 @@ import PlayersTable from "./PlayersTable"
 import '../index.css'
 import CreateTeam from "./CreateTeam";
 
-function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData }) {
+function MyTeam({ myTeam, team, isLoggedIn }) {
   
     const positions = Object.keys(myTeam)
     
@@ -18,12 +18,7 @@ function MyTeam({ onSaveTeam, myTeam, team, isLoggedIn, setTeamData }) {
                 {team.teamName === "" ? "Please Create A Team Before Adding Players" : <h2>{team.cityName}, {team.teamName}</h2>}
 
             </div>
-            <CreateTeam 
-            isLoggedIn={isLoggedIn} 
-            team={team}
-            setTeam={setTeamData}
-            onSaveTeam={onSaveTeam}
-            />
+            <CreateTeam />
             <PlayersTable positions= {positions} />
             
         </div>

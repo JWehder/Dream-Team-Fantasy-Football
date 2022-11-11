@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TeamContext } from "../context/myTeam";
 import "../index.css"
 
-function CreateTeam({ setTeam, team, onSaveTeam }) {
+function CreateTeam() {
+
+    const { handleSaveTeam, teamData, setTeamData } = useContext(TeamContext)
 
     function handleSubmit(e) {
         e.preventDefault() 
-        const teamData = {
-          cityName: team.cityName,
-          teamName: team.teamName,
-          teamLogo: team.teamLogo
+        const team = {
+          cityName: teamData.cityName,
+          teamName: teamData.teamName,
+          teamLogo: teamData.teamLogo
         }
-        setTeam(teamData);
+        setTeamData(team);
     }
 
     function handleChange(e) {
-        setTeam({
-            ...team,
+        setTeamData({
+            ...teamData,
             [e.target.name]: e.target.value
         })
     }
@@ -25,7 +28,7 @@ function CreateTeam({ setTeam, team, onSaveTeam }) {
             <form onSubmit={handleSubmit}>
                 <input 
                 type="text" 
-                value={team.cityName} 
+                value={teamData.cityName} 
                 name="cityName"
                 placeholder="City Name"
                 onChange={handleChange}
@@ -33,7 +36,7 @@ function CreateTeam({ setTeam, team, onSaveTeam }) {
                 />
                 <input
                 type="text"
-                value={team.teamName}
+                value={teamData.teamName}
                 name="teamName"
                 placeholder="Team Name"
                 onChange={handleChange}
@@ -41,7 +44,7 @@ function CreateTeam({ setTeam, team, onSaveTeam }) {
                 />
                 <input
                 type="text"
-                value={team.teamLogo}
+                value={teamData.teamLogo}
                 name="teamLogo"
                 placeholder="Insert Image URL here"
                 onChange={handleChange}
@@ -50,7 +53,7 @@ function CreateTeam({ setTeam, team, onSaveTeam }) {
                 <input
                 type="submit"
                 value="Create Team"
-                onClick={onSaveTeam}
+                onClick={handleSaveTeam}
                 />
             </form>
             
