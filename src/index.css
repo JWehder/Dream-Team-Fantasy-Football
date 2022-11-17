@@ -47,26 +47,20 @@ div.myTeamHeader {
 }
 
 div.homepageHeader {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding-bottom: 40px;
 }
 
 .homepageHeader h1 {
   text-align: center;
+  margin-bottom: 30px
 }
 
-form.searchForm {
+.searchForm {
   float: left;
   display: flex;
   height: 20px;
   margin-left: 100px;
-}
-
-div.filter {
-  float: left;
-  display: flex;
-  margin-bottom: 25px;
-  height: 20px;
 }
 
 div.playerContainer {
@@ -89,6 +83,11 @@ div.playerContainer {
 
 .Login input {
   width: 350px;
+}
+
+.filter {
+  display: block;
+  margin: 0 auto;
 }
 
 .loginForm {

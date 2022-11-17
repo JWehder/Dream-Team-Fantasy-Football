@@ -4,7 +4,7 @@ import '../index.css'
 function Filter({ onCategoryChange }) {
 
     return (
-        <div>
+        <>
             <select className= "filter" name="filter" onChange={onCategoryChange}>
                 <option value="All">Filter by position</option>
                 <option value="QB">QB</option>
@@ -14,7 +14,7 @@ function Filter({ onCategoryChange }) {
                 <option value="K">K</option>
                 <option value="DEF">DEF</option>
             </select>
-        </div>
+        </>
     )
 }
 
