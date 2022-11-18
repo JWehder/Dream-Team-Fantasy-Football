@@ -17,12 +17,12 @@ function Login({ setHeader, setIsLoggedIn }) {
             ...userData,
             [e.target.name]: e.target.value
         })
-        setHeader(userData.username)
     }
 
     function handleSubmit(e) {
         e.preventDefault()
         setIsLoggedIn(true);
+        setHeader(userData.username)
         history.push("/");
     }
 

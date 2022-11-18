@@ -22,9 +22,7 @@ function MyTeam({ isLoggedIn }) {
             </div>
             <CreateTeam />
             <PlayersTable positions= {positions} />
-            
         </div>
-        
     )
 }
 

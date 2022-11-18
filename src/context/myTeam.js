@@ -73,7 +73,6 @@ function TeamProvider({ children }) {
           })
     }
       
-
     function handlePlayerClick(playerName) {
         fetch('http://localhost:3000/players') 
           .then(resp => resp.json())
