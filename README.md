@@ -21,10 +21,6 @@ npm start
 
 Next, in order to get your backend running, you will need to fork and clone [this repository](https://github.com/JWehder/json-server-template) from GitHub. Once there, open up the `README.md` within the directory to follow the instructions on how to start up the backend.
 
-## Usage
-
-In order to get an understanding of how to work my application, I created a [Youtube video](https://youtu.be/IvmaLl-peU0) with all the information that you will need to know.
-
 ## Contributing and Support 
 
 For any major changes or questions, please contact me via email at jake.wehder@gmail.com.
